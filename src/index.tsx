@@ -1,5 +1,2 @@
-export default {
-	get TestButton() {
-    return require('./components/testButton').default;
-  },
-};
+import Button from "./Button";
+export default Button;
