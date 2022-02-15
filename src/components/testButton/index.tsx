@@ -1,25 +1,26 @@
-import React, {PureComponent} from 'react';
-import {TouchableOpacity, Text} from 'react-native';
+import React, { PureComponent } from "react";
+import { TouchableOpacity, Text } from "react-native";
 
-class Button extends PureComponent {
-    static displayName = 'Button';
-    
-    constructor(props) {
-        super(props);
-    }
+export interface Props {
+  disabled?: boolean;
+}
 
-    render() {
-    const {onPress, disabled} = this.props;
+class Button extends PureComponent<Props> {
+  static displayName = "Button";
+
+  constructor(props: Props) {
+    super(props);
+  }
+
+  render() {
+    const { disabled } = this.props;
 
     return (
-      <TouchableOpacity
-        onPress={onPress}
-        disabled={disabled}
-      >
+      <TouchableOpacity disabled={disabled}>
         <Text>Test Button</Text>
       </TouchableOpacity>
     );
   }
 }
 
-export {Button};
+export { Button };
